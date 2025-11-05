@@ -21,8 +21,8 @@ const CareersPage = () => {
         <p className="mt-4">We are currently hiring for the following positions:</p>
         <ul className="list-disc list-inside mt-4">
           <li>Licensed Insurance Broker</li>
-          <li>Customer Service Representative</li>
-          <li>Software Developer</li>
+          <li>AI Automation Engineer</li>
+          <li>Software Engineer</li>
         </ul>
         <p className="mt-4">To apply for a position, please send your resume and cover letter to <a href="mailto:careers@hinuinsure.ca" className="text-blue-600">careers@hinuinsure.ca</a>.</p>
       </main>

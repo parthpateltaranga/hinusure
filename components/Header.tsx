@@ -9,7 +9,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="bg-white shadow-md">
+    <header className="bg-white shadow-md relative z-50">
       <div className="top-bar bg-gray-100 py-2 hidden md:block">
         <div className="container mx-auto flex justify-end items-center text-sm">
           <Link href="/auto-insurance" className="text-gray-600 hover:text-blue-600 px-3">Auto Insurance</Link>
@@ -18,16 +18,22 @@ const Header = () => {
         </div>
       </div>
       <div className="main-nav py-4">
-        <div className="container mx-auto flex justify-between items-center">
-          <Link href="/">
-            <span className="text-2xl font-bold text-blue-600">Hinuinsure</span>
-          </Link>
-          <div className="md:hidden"> {/* Hamburger menu for small screens */}
-            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-gray-600 focus:outline-none">
-              {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
-            </button>
+        <div className={`container mx-auto flex justify-between items-center ${isMenuOpen ? 'flex-col' : ''}`}>
+          <div className="flex justify-between w-full items-center">
+            <Link href="/">
+              <span className="text-2xl font-bold text-blue-600">Hinuinsure</span>
+            </Link>
+            <div className="md:hidden"> {/* Hamburger menu for small screens */}
+              <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-gray-600 focus:outline-none">
+                {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+              </button>
+            </div>
           </div>
-          <nav className={`md:flex items-center ${isMenuOpen ? 'flex flex-col absolute top-full left-0 w-full bg-white shadow-md py-4' : 'hidden'}`}>
+          <nav className={`md:flex items-center ${isMenuOpen ? 'flex flex-col w-full bg-white shadow-md py-4' : 'hidden'}`}>
+            <Link href="/auto-insurance" className="text-gray-600 hover:text-blue-600 px-4 py-3 md:py-0 block text-center">Auto Insurance</Link>
+            <Link href="/home-insurance" className="text-gray-600 hover:text-blue-600 px-4 py-3 md:py-0 block text-center">Home Insurance</Link>
+            <Link href="/life-insurance" className="text-gray-600 hover:text-blue-600 px-4 py-3 md:py-0 block text-center">Life Insurance</Link>
+            <Link href="/commercial-insurance" className="text-gray-600 hover:text-blue-600 px-4 py-3 md:py-0 block text-center">Commercial Insurance</Link>
             <Link href="/more-insurance" className="text-gray-600 hover:text-blue-600 px-4 py-3 md:py-0 block text-center">More Insurance</Link>
             <Link href="/why-us" className="text-gray-600 hover:text-blue-600 px-4 py-3 md:py-0 block text-center">Why Us</Link>
             <Link href="/customer-service" className="text-gray-600 hover:text-blue-600 px-4 py-3 md:py-0 block text-center">Customer Service</Link>
