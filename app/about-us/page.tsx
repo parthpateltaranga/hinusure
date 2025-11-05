@@ -1,10 +1,15 @@
+
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
 const AboutUsPage = () => {
+  const onGetQuoteClick = () => {
+    console.log('Get Quote clicked on About Us page');
+  };
+
   return (
     <>
-      <Header />
+      <Header onGetQuoteClick={onGetQuoteClick} />
       <main className="container mx-auto p-8">
         <h1 className="text-3xl font-bold">About Hinuinsure</h1>
         <p className="mt-4">Hinuinsure is a leading Canadian insurance brokerage. We are committed to providing our clients with the best possible service and advice. We are an independent brokerage, which means we work for you, not the insurance companies. We have access to a wide range of insurance products from Canada's top insurance companies, so you can be sure you're getting the best possible value.</p>
@@ -24,3 +29,4 @@ const AboutUsPage = () => {
 };
 
 export default AboutUsPage;
+
