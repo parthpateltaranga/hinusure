@@ -1,6 +1,5 @@
 
-"use client";
-
+import Image from 'next/image';
 import dynamic from 'next/dynamic';
 
 const Slider = dynamic(() => import('react-slick'), { ssr: false, loading: () => null });
@@ -57,7 +56,7 @@ const PartnerBar = () => {
         <Slider {...settings}>
           {logos.map((logo, index) => (
             <div key={index} className="mx-4 flex justify-center items-center">
-              <img src={logo.src} alt={logo.alt} style={{ height: '40px', width: 'auto' }} />
+              <Image src={logo.src} alt={logo.alt} width={100} height={40} style={{ objectFit: 'contain' }} />
             </div>
           ))}        </Slider>
       </div>
